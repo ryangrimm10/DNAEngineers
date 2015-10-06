@@ -1,0 +1,23 @@
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Screen3 extends JFrame{
+	public Screen3(){
+		super("Palindrome Sequencer");
+		int i = 10;
+		int j = 10;
+		JPanel[][] grid = new JPanel[i][j];
+		setLayout(new GridLayout(i, j));
+		
+		for (int m = 0; m < i; m++) {
+			for (int n = 0; n < j; n++) {
+				grid[m][n] = new JPanel();
+				add(grid[m][n]);
+			}
+		}
+		
+		
+	}
+}

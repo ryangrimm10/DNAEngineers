@@ -1,40 +1,28 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Button;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
-public class Screen3 extends JFrame {
-
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Screen3 frame = new Screen3();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+public class Screen3 extends JFrame{
+	Button submit;
+	
+	public Screen3(){
+		super("Palindrome Sequencer");
+		int i = 10;
+		int j = 10;
+		JPanel[][] grid = new JPanel[i][j];
+		setLayout(new GridLayout(i, j));
+		
+		for (int m = 0; m < i; m++) {
+			for (int n = 0; n < j; n++) {
+				grid[m][n] = new JPanel();
+				add(grid[m][n]);
 			}
-		});
+		}
+		
+		submit = new Button("Submit");
+		grid[0][0].add(submit);
+		
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Screen3() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1917, 1081);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-	}
-
 }
