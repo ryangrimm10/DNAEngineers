@@ -163,6 +163,7 @@ public class MainScreen extends JFrame {
 		panel_1.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Clear");
+		btnNewButton_3.setBackground(Color.RED);
 		panel_1.add(btnNewButton_3);
 	}
 
