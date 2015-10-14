@@ -46,7 +46,7 @@ public class MainScreen extends JFrame {
 		setTitle("DNA Engineers - Palindrome Sequencer");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 444, 310);
+		setBounds(100, 100, 582, 454);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -59,6 +59,9 @@ public class MainScreen extends JFrame {
 		
 		JMenuItem mntmLoad = new JMenuItem("Load");
 		mnFile.add(mntmLoad);
+		
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mnFile.add(mntmExit);
 		
 		JMenu mnCustomize = new JMenu("Customize");
 		menuBar.add(mnCustomize);
