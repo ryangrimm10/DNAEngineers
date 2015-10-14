@@ -159,6 +159,7 @@ public class MainScreen extends JFrame {
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btnNewButton_2 = new JButton("Submit");
+		btnNewButton_2.setBackground(Color.GREEN);
 		panel_1.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Clear");
