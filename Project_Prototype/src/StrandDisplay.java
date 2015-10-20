@@ -10,6 +10,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JTextPane;
+import java.awt.Color;
 
 public class StrandDisplay extends JFrame {
 
@@ -63,18 +64,28 @@ public class StrandDisplay extends JFrame {
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnNewButton_1 = new JButton("Strand 0");
+		btnNewButton_1.setForeground(Color.WHITE);
+		btnNewButton_1.setBackground(new Color(0, 128, 0));
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Strand 1");
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(new Color(0, 128, 0));
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_2 = new JButton("Strand 2");
+		btnNewButton_2.setForeground(Color.WHITE);
+		btnNewButton_2.setBackground(new Color(0, 128, 0));
 		panel.add(btnNewButton_2);
 		
 		JButton btnStrand = new JButton("Strand 3");
+		btnStrand.setForeground(Color.WHITE);
+		btnStrand.setBackground(new Color(0, 128, 0));
 		panel.add(btnStrand);
 		
 		JButton btnNewButton_3 = new JButton("Stand 4");
+		btnNewButton_3.setForeground(Color.WHITE);
+		btnNewButton_3.setBackground(new Color(0, 128, 0));
 		panel.add(btnNewButton_3);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
