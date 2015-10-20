@@ -38,6 +38,7 @@ public class MainScreen extends JFrame {
 				try {
 					MainScreen frame = new MainScreen();
 					frame.setVisible(true);
+					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -62,7 +63,7 @@ public class MainScreen extends JFrame {
 		setTitle("DNA Engineers - Palindrome Sequencer");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 696, 612);
+		setBounds(100, 100, 683, 580);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -131,11 +132,13 @@ public class MainScreen extends JFrame {
 			panel_6.add(lblStrandType);
 																										
 			JRadioButton rdbtnDna = new JRadioButton("DNA");
+			rdbtnDna.setOpaque(false);
 			rdbtnDna.setForeground(new Color(0, 128, 0));
 			rdbtnDna.setSelected(true);
 			panel_6.add(rdbtnDna);
 																										
 			JRadioButton rdbtnRna = new JRadioButton("RNA");
+			rdbtnRna.setOpaque(false);
 			rdbtnRna.setForeground(radMagenta);
 			panel_6.add(rdbtnRna);
 																										
@@ -151,11 +154,14 @@ public class MainScreen extends JFrame {
 			panel_7.add(lblWhatDo);
 																												
 			JRadioButton rdbtnFind = new JRadioButton("Find");
+			rdbtnFind.setOpaque(false);
 			rdbtnFind.setSelected(true);
-			rdbtnFind.setForeground(Color.BLACK);
+			rdbtnFind.setForeground(Color.WHITE);
 			panel_7.add(rdbtnFind);
 																												
 			JRadioButton rdbtnCompare = new JRadioButton("Compare");
+			rdbtnCompare.setForeground(Color.WHITE);
+			rdbtnCompare.setOpaque(false);
 			panel_7.add(rdbtnCompare);
 																												
 			JPanel panel_8 = new JPanel();
