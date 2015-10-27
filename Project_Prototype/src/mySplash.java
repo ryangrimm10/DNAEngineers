@@ -1,7 +1,6 @@
 import java.awt.Color;
 
 import com.thehowtotutorial.splashscreen.JSplash;
-
 public class mySplash {
 
 	public static void main(String[] args) {

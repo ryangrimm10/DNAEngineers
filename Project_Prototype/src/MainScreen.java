@@ -1,34 +1,45 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JMenuBar;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-public class MainScreen extends JFrame {
+public class MainScreen extends JFrame implements ActionListener {
 
     private JPanel contentPane;
 	private JTextField txtFirstStrand;
 	private JTextField txtStrand;
 	private JTextField textField_1;
 	private JTextField textField;
-
+	private JButton logoButton = new JButton();
+	private JButton clearButton = new JButton("Clear");
+	private JButton submitButton = new JButton("Submit");
+	private JButton importButton1 = new JButton("Import");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -63,7 +74,7 @@ public class MainScreen extends JFrame {
 		setTitle("DNA Engineers - Palindrome Sequencer");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 683, 580);
+		setBounds(100, 100, 683, 545);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -91,7 +102,7 @@ public class MainScreen extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, -5));
 												
 		JLabel Background = new JLabel();
 		contentPane.add(Background);
@@ -141,6 +152,10 @@ public class MainScreen extends JFrame {
 			rdbtnRna.setOpaque(false);
 			rdbtnRna.setForeground(radMagenta);
 			panel_6.add(rdbtnRna);
+			
+			ButtonGroup strandGroup = new ButtonGroup();
+			strandGroup.add(rdbtnDna);
+			strandGroup.add(rdbtnRna);
 																										
 			JPanel panel_7 = new JPanel();
 			panel_7.setForeground(Color.WHITE);
@@ -163,6 +178,11 @@ public class MainScreen extends JFrame {
 			rdbtnCompare.setForeground(Color.WHITE);
 			rdbtnCompare.setOpaque(false);
 			panel_7.add(rdbtnCompare);
+			
+			ButtonGroup findCompareGroup = new ButtonGroup();
+			findCompareGroup.add(rdbtnFind);
+			findCompareGroup.add(rdbtnCompare);
+			
 																												
 			JPanel panel_8 = new JPanel();
 			panel_8.setForeground(Color.WHITE);
@@ -178,10 +198,10 @@ public class MainScreen extends JFrame {
 																														
 			textField_1 = new JTextField();
 			panel_8.add(textField_1);
-			textField_1.setColumns(10);
+			textField_1.setColumns(20);
 																														
-			JButton btnNewButton = new JButton("Import");
-			panel_8.add(btnNewButton);
+			importButton1.addActionListener(this);
+			panel_8.add(importButton1);
 																														
 			JPanel panel_9 = new JPanel();
 			panel_9.setForeground(Color.WHITE);
@@ -197,7 +217,7 @@ public class MainScreen extends JFrame {
 				
 			textField = new JTextField();
 			panel_9.add(textField);
-			textField.setColumns(10);
+			textField.setColumns(20);
 			
 			JButton btnNewButton_1 = new JButton("Import");
 			panel_9.add(btnNewButton_1);
@@ -209,13 +229,14 @@ public class MainScreen extends JFrame {
 			panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			panel_1.setBackground(lightBlue);
 			
-			JButton btnNewButton_2 = new JButton("Submit");
-			btnNewButton_2.setBackground(okGreen);
-			panel_1.add(btnNewButton_2);
+			submitButton.setBackground(okGreen);
+			submitButton.addActionListener(this);
+			panel_1.add(submitButton);
 			
-			JButton btnNewButton_3 = new JButton("Clear");
-			btnNewButton_3.setBackground(lightOrange);
-			panel_1.add(btnNewButton_3);
+			
+			clearButton.setBackground(lightOrange);
+			clearButton.addActionListener(this);
+			panel_1.add(clearButton);
 			
 			
 			JPanel panel_2 = new JPanel();
@@ -224,8 +245,84 @@ public class MainScreen extends JFrame {
 			panel_2.setOpaque(false);
 			panel_2.setBackground(transparent);
 			
-			JButton btnNewButton_4 = new JButton("New button");
-			panel_2.add(btnNewButton_4);
+			
+			logoButton.setSize(200, 140);
+			logoButton.addActionListener(this);
+			panel_2.add(logoButton);
+			try
+			{
+				Image logo = ImageIO.read(getClass().getResource("ProjectLogo.gif"));
+				Image newimg = logo.getScaledInstance(200, 140, java.awt.Image.SCALE_SMOOTH ) ;  
+				logoButton.setIcon(new ImageIcon(newimg));
+			}
+			catch (IOException ex)
+			{
+				
+			}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent click) {
+		
+		Object source = click.getSource();
+		
+		
+		if (source == logoButton)
+		{
+			try
+			{
+			String url = "http://thednaengineers.co.nf/About.html";
+			Desktop dt = Desktop.getDesktop();
+			URI uri = new URI(url);
+			dt.browse(uri.resolve(uri));
+			}
+			catch (URISyntaxException ex)
+			{
+				
+			}
+			catch (IOException ex)
+			{
+				
+			}
+		}
+		
+		if (source == clearButton)
+		{
+			textField_1.setText("");
+			textField.setText("");
+		}
+		
+		if (source == submitButton)
+		{
+			StrandDisplay secondDisplay = new StrandDisplay();
+			secondDisplay.setVisible(true);
+			
+		}
+		
+		if (source == importButton1)
+		{
+			
+				JFileChooser chooser = new JFileChooser();
+		        int status = chooser.showOpenDialog(null);
+		        if (status == JFileChooser.APPROVE_OPTION) {
+		            File file = chooser.getSelectedFile();
+		            if (file == null) {
+		                return;
+		            }
+
+		            String fileName = chooser.getSelectedFile().getAbsolutePath();
+		            
+		            
+		            textField_1.setText("Strand Imported");
+		            
+
+		        }
+
+		}
+		
+
+
+		
 	}	
 
 }
