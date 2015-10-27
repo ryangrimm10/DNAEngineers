@@ -39,7 +39,7 @@ public class MainScreen extends JFrame {
 				try {
 					MainScreen frame = new MainScreen();
 					Toolkit tk = Toolkit.getDefaultToolkit();
-					frame.setSize(1920, 1080);
+					frame.setSize(1000, 1000);
 					frame.setVisible(true);
 					frame.setResizable(false);
 				} catch (Exception e) {
