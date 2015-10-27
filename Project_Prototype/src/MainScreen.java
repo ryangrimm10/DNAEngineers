@@ -6,9 +6,13 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+<<<<<<< HEAD
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+=======
+import java.awt.Toolkit;
+>>>>>>> 8dca8bb794a38ba16a9290cabc9eeaea1fded6e8
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -48,6 +52,8 @@ public class MainScreen extends JFrame implements ActionListener {
 			public void run() {
 				try {
 					MainScreen frame = new MainScreen();
+					Toolkit tk = Toolkit.getDefaultToolkit();
+					frame.setSize(1000, 1000);
 					frame.setVisible(true);
 					frame.setResizable(false);
 				} catch (Exception e) {
@@ -68,6 +74,7 @@ public class MainScreen extends JFrame implements ActionListener {
 		Color transparent = new Color(0,0,0,0);
 		ImageIcon img = null;
 		img = new ImageIcon(getClass().getResource("background.png"));
+		
       
 		
 		
@@ -108,6 +115,7 @@ public class MainScreen extends JFrame implements ActionListener {
 		contentPane.add(Background);
 		Background.setLayout(new BorderLayout(0, 0));
 		Background.setIcon(img);
+		
 	
 																			
 			JPanel panel_4 = new JPanel();
@@ -197,6 +205,7 @@ public class MainScreen extends JFrame implements ActionListener {
 			panel_8.add(lblNewLabel);
 																														
 			textField_1 = new JTextField();
+			
 			panel_8.add(textField_1);
 			textField_1.setColumns(20);
 																														
