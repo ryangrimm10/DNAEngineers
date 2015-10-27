@@ -10,11 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.Toolkit;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -51,7 +49,7 @@ public class MainScreen extends JFrame implements ActionListener {
 				try {
 					MainScreen frame = new MainScreen();
 					Toolkit tk = Toolkit.getDefaultToolkit();
-					frame.setSize(1000, 1000);
+					frame.setSize(1000, 800);
 					frame.setVisible(true);
 					frame.setResizable(false);
 				} catch (Exception e) {
