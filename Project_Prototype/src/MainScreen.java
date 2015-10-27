@@ -6,13 +6,11 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
-<<<<<<< HEAD
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-=======
 import java.awt.Toolkit;
->>>>>>> 8dca8bb794a38ba16a9290cabc9eeaea1fded6e8
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
