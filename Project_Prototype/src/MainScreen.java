@@ -48,7 +48,6 @@ public class MainScreen extends JFrame implements ActionListener {
 			public void run() {
 				try {
 					MainScreen frame = new MainScreen();
-					Toolkit tk = Toolkit.getDefaultToolkit();
 					frame.setSize(1000, 800);
 					frame.setVisible(true);
 					frame.setResizable(false);
@@ -298,8 +297,9 @@ public class MainScreen extends JFrame implements ActionListener {
 		}
 		
 		if (source == submitButton)
-		{
+		{DnaStrand strand = new DnaStrand(textField_1.getText());
 			StrandDisplay secondDisplay = new StrandDisplay();
+			secondDisplay.setPalindromeText(strand.getPalindromes());
 			secondDisplay.setVisible(true);
 			
 		}
