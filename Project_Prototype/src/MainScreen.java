@@ -54,6 +54,7 @@ public class MainScreen extends JFrame implements ActionListener {
 					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
+					
 				}
 			}
 		});
