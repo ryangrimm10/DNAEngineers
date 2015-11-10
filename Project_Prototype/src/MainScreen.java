@@ -1,19 +1,14 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-
-import java.awt.Toolkit;
-
 
 import java.io.IOException;
 import java.net.URI;
@@ -44,10 +39,7 @@ public class MainScreen extends JFrame implements ActionListener {
 	private JButton clearButton = new JButton("Clear");
 	private JButton submitButton = new JButton("Submit");
 	private JButton importButton1 = new JButton("Import");
-	
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		{
 				try {
@@ -258,7 +250,6 @@ public class MainScreen extends JFrame implements ActionListener {
 			logoButton.addActionListener(this);
 			panel_2.add(logoButton);
 			
-			
 			try
 			{
 				Image logo = ImageIO.read(getClass().getResource("ProjectLogo.gif"));
@@ -318,23 +309,15 @@ public class MainScreen extends JFrame implements ActionListener {
 		        int status = chooser.showOpenDialog(null);
 		        if (status == JFileChooser.APPROVE_OPTION) {
 		            File file = chooser.getSelectedFile();
+		            
 		            if (file == null) {
 		                return;
 		            }
-
+		            
 		            String fileName = chooser.getSelectedFile().getAbsolutePath();
-		            
-		            
-		            textField_1.setText("Strand Imported");
-		            
-
+		            textField_1.setText("Strand Imported");            
 		        }
-
-		}
-		
-
-
-		
+		}		
 	}	
 
 }

@@ -10,7 +10,6 @@ INDEX VERSION 1.127+C:\Users\Brandon\Documents\GitHub\DNAEngineers\Eclipse\.meta
 223145436.index
 3454846027.index
 508735940.index
-942130408.index
 829662739.index
 1242930374.index
 17941638.index
