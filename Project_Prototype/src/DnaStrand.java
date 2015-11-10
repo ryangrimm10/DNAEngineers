@@ -38,6 +38,7 @@ public class DnaStrand {
 		this.compareStrand();
 	}
 	
+	
 	public void createCompliment()
 	{
 		for (int i = 0; i < strand.length(); i++)
@@ -99,4 +100,5 @@ public class DnaStrand {
 	{
 		return palindromes.toString();
 	}
+	
 }
