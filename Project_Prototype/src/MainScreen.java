@@ -6,7 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
-<<<<<<< HEAD
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,12 +14,7 @@ import java.io.File;
 
 import java.awt.Toolkit;
 
-=======
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.awt.Toolkit;
->>>>>>> 94fc27dbd503b0b2c7dae7a307502862103ea844
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -54,8 +49,7 @@ public class MainScreen extends JFrame implements ActionListener {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+		{
 				try {
 					MainScreen frame = new MainScreen();
 					frame.setSize(1000, 800);
@@ -66,7 +60,6 @@ public class MainScreen extends JFrame implements ActionListener {
 					
 				}
 			}
-		});
 	}
 
 	/**
@@ -264,6 +257,8 @@ public class MainScreen extends JFrame implements ActionListener {
 			logoButton.setSize(200, 140);
 			logoButton.addActionListener(this);
 			panel_2.add(logoButton);
+			
+			
 			try
 			{
 				Image logo = ImageIO.read(getClass().getResource("ProjectLogo.gif"));
@@ -274,6 +269,7 @@ public class MainScreen extends JFrame implements ActionListener {
 			{
 				
 			}
+			
 	}
 
 	@Override
