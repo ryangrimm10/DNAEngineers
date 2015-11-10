@@ -15,6 +15,7 @@ import java.awt.Color;
 public class StrandDisplay extends JFrame {
 
     private JPanel contentPane;
+    JTextPane palindromePane = new JTextPane();
 
 	/**
 	 * Launch the application.
@@ -94,14 +95,18 @@ public class StrandDisplay extends JFrame {
 		JTextPane textPane_2 = new JTextPane();
 		tabbedPane.addTab("New tab", null, textPane_2, null);
 		
-		JTextPane textPane = new JTextPane();
-		tabbedPane.addTab("New tab", null, textPane, null);
+		tabbedPane.addTab("Palindromes", null, palindromePane, null);
 		
 		JTextPane textPane_1 = new JTextPane();
 		tabbedPane.addTab("New tab", null, textPane_1, null);
 		
 		JScrollBar scrollBar = new JScrollBar();
 		contentPane.add(scrollBar, BorderLayout.EAST);
+	}
+	
+	public void setPalindromeText(String palindrome)
+	{
+		palindromePane.setText(palindrome);
 	}
 
 }

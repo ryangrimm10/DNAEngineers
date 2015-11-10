@@ -1,7 +1,6 @@
 import java.awt.Color;
 
 import com.thehowtotutorial.splashscreen.JSplash;
-
 public class mySplash {
 
 	public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class mySplash {
 			Thread.sleep(1000);
 			splash.setProgress(50, "Configuring"); // displays loading at 40%
 			Thread.sleep(1000);
-			splash.setProgress(80, "Starting App");
+			splash.setProgress(80, "Starting Application");
 			Thread.sleep(1000);
 			splash.splashOff();
 
